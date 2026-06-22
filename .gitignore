@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+its_no10_11/.venv/
+its_no10_11/uv.lock

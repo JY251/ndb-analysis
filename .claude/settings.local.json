@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.google.com)",
+      "WebFetch(domain:www.mhlw.go.jp)",
+      "Bash(python3 -c \"import openpyxl; wb = openpyxl.load_workbook\\('/mnt/c/Users/e231b/WorkingDir/ndb_analysis/rd10_naifuku_gaigai.xlsx', read_only=True\\); print\\('Sheets:', wb.sheetnames\\)\")",
+      "Bash(python3 -c \"import pandas as pd; df = pd.read_excel\\('/mnt/c/Users/e231b/WorkingDir/ndb_analysis/rd10_naifuku_gaigai.xlsx', sheet_name=None, nrows=5\\); print\\(list\\(df.keys\\(\\)\\)\\)\")",
+      "Bash(python3 *)",
+      "WebFetch(domain:doc-0g-2g-slides.googleusercontent.com)",
+      "Bash(curl -L -o /mnt/c/Users/e231b/WorkingDir/ndb_analysis/its_no10_11/slide_antibiotics.pdf https://docs.google.com/presentation/d/1vLvNmK0zVZeeX-lO0eyfDW125ygO19ik7UgyasVAFOI/export/pdf -w '\\\\nHTTP status: %{http_code}\\\\nFile size: %{size_download} bytes\\\\n')",
+      "Bash(sudo apt-get install -y poppler-utils)",
+      "Bash(uv run *)",
+      "Bash(curl -L -o /mnt/c/Users/e231b/WorkingDir/ndb_analysis/its_no10_11/data/no10_raw/injection_monthly.xlsx https://www.mhlw.go.jp/content/12400000/001495481.xlsx -w '\\\\nHTTP: %{http_code}, Size: %{size_download} bytes\\\\n')",
+      "Bash(curl -L -o /tmp/629_list.xlsx 'https://docs.google.com/spreadsheets/d/1Mo8hfQS96beLkbEzhpA7VnbJLuWzzvrIwz1dqtz6kW8/export?format=xlsx&gid=126509002' -w '\\\\nHTTP: %{http_code}, Size: %{size_download}\\\\n')",
+      "Bash(curl -L -o /tmp/naifuku_629.xlsx 'https://docs.google.com/spreadsheets/d/1q9klQ35_VrEg3suos0-hzalWEqG8p41wgavAtlQrW4o/export?format=xlsx&gid=0' -w '\\\\nHTTP: %{http_code}, Size: %{size_download}\\\\n')",
+      "Bash(gh auth *)",
+      "Bash(gh repo *)",
+      "Bash(git init *)",
+      "Bash(git config *)",
+      "Bash(git branch *)",
+      "Bash(git remote *)",
+      "Bash(git add *)"
+    ]
+  }
+}

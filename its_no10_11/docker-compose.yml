@@ -1,0 +1,11 @@
+services:
+  analysis:
+    build: .
+    volumes:
+      - ./scripts:/project/scripts
+      - ./data:/project/data
+      - ./output:/project/output
+      # No.11 local source (read-only)
+      - /mnt/c/Users/e231b/Downloads/001711931/05_処方薬_シート統合後(公開対象)/01_処方薬（内服／外用／注射）全:/project/data/no11_raw:ro
+    working_dir: /project
+    command: ["Rscript", "scripts/its_main.R"]
