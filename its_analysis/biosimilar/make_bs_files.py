@@ -29,8 +29,8 @@ FILES = [
     },
 ]
 
-# 341 サブラッドBSGは製品名に「ＢＳ」を含むがバイオシミラーではないため除外
-EXCLUDE_DRUG_NAMES = {"サブラッドＢＳＧ"}
+# 341 サブラッド血液ろ過用補充液BSGは製品名に「ＢＳ」を含むがバイオシミラーではないため除外
+EXCLUDE_DRUG_NAME_PATTERNS = ["サブラッド"]
 
 HEADER_ROWS = 4  # 行1:タイトル, 行2:空白, 行3:列ヘッダー, 行4:空白
 
@@ -43,8 +43,8 @@ def is_bs(row_values):
     name_str = str(name)
     if "ＢＳ" not in name_str:
         return False
-    # 341 サブラッドBSGはバイオシミラーではないため除外
-    if any(excl in name_str for excl in EXCLUDE_DRUG_NAMES):
+    # サブラッドBSGはバイオシミラーではないため除外
+    if any(pat in name_str for pat in EXCLUDE_DRUG_NAME_PATTERNS):
         return False
     return True
 
