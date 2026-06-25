@@ -17,7 +17,7 @@ RD11_SRC = "its_analysis/rd11_injection_monthly.xlsx"
 FILES = [
     {
         "label": "rd10",
-        "src": "/mnt/c/Users/e231b/WorkingDir/ndb_analysis/rd10_injection.xlsx",
+        "src": "its_no10_11/data/no10_raw/injection_monthly.xlsx",
         "out_hl": "its_analysis/biosimilar/rd10_injection_monthly_highlighted.xlsx",
         "out_bs": "its_analysis/biosimilar/rd10_injection_monthly_BS_only_v2.xlsx",
     },

@@ -175,13 +175,9 @@ def load_all_data() -> dict:
             df = load_bs_sheet(path, sheet_name, month_map)
             frames[setting].append(df)
 
-    # 外来院内+院外 を合算
-    df_gainai = pd.concat(frames["外来(院内)"]).groupby(["薬効分類", "年月"])["数量"].sum().reset_index()
-    df_gaigai = pd.concat(frames["外来(院外)"]).groupby(["薬効分類", "年月"])["数量"].sum().reset_index()
-    df_gaigai["数量"] += df_gainai.set_index(["薬効分類", "年月"])["数量"]
-
+    # 外来院内+院外 を合算（concat してから groupby sum）
     df_gairai = (
-        pd.concat([df_gainai, df_gaigai])
+        pd.concat(frames["外来(院内)"] + frames["外来(院外)"])
         .groupby(["薬効分類", "年月"])["数量"].sum().reset_index()
     )
 
