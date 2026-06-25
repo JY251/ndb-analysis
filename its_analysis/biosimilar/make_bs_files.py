@@ -12,7 +12,7 @@ import os
 
 YELLOW = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
 
-RD11_SRC = "/mnt/c/Users/e231b/Downloads/001711931/05_処方薬_シート統合後(公開対象)/01_処方薬（内服／外用／注射）全/【注射】診療月別薬効分類別数量(公費含む).xlsx"
+RD11_SRC = "its_analysis/rd11_injection_monthly.xlsx"
 
 FILES = [
     {

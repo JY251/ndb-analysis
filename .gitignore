@@ -4,3 +4,5 @@ __pycache__/
 *.log
 its_no10_11/.venv/
 its_no10_11/uv.lock
+its_no10_11/output/its_plots/
+its_no10_11/output/its_antibiotics_results.xlsx

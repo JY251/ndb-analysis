@@ -15,7 +15,7 @@ WORKDIR /project
 
 # Python deps via uv
 COPY pyproject.toml .
-RUN uv sync --frozen
+RUN uv sync
 
 # R packages for ITS
 RUN Rscript -e "install.packages(c('readxl','dplyr','tidyr','ggplot2','segmented','nlme','lubridate','writexl'), repos='https://cloud.r-project.org')"
