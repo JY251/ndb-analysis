@@ -36,8 +36,23 @@ import argparse
 import math
 from pathlib import Path
 
+import matplotlib
+import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
+
+# ── 日本語フォント設定 ────────────────────────────────────────────────────────
+_JP_FONT_CANDIDATES = [
+    "/mnt/c/Windows/Fonts/YuGothB.ttc",
+    "/mnt/c/Windows/Fonts/meiryo.ttc",
+    "/mnt/c/Windows/Fonts/msgothic.ttc",
+]
+for _fp in _JP_FONT_CANDIDATES:
+    if Path(_fp).exists():
+        fm.fontManager.addfont(_fp)
+        _fname = fm.FontProperties(fname=_fp).get_name()
+        matplotlib.rcParams["font.family"] = _fname
+        break
 import numpy as np
 import openpyxl
 import pandas as pd
